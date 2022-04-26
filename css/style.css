@@ -1,0 +1,110 @@
+/* Typography */
+body {
+  font-family: 'Fauna One', serif;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0;
+}
+
+/* Generic styles */
+
+body {
+  width: 90%;
+  margin: 2rem auto 0 auto;
+}
+
+main {
+  padding: 2.5rem 0;
+  border-top: 2px solid #212529;
+  border-bottom: 2px solid #212529;
+}
+
+p {
+  margin-bottom: .1rem;
+}
+
+/* Header */
+
+header {
+  margin-bottom: 1rem;
+}
+
+/* Products */
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem 3rem 1rem;
+  margin: 1.5rem;
+  width: 259px;
+  height: 222px;
+  border: 2px solid #212529;
+}
+
+.delete-checkbox {
+  align-self: flex-start;
+}
+
+.product-list {
+  max-width: 1228px;
+}
+
+@media only screen and (max-width: 1364px) {
+  .product-list {
+    max-width: 921px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .product-list {
+    max-width: 614px;
+  }
+}
+
+@media only screen and (max-width: 683px) {
+  .product-list {
+    max-width: 307px;
+  }
+}
+
+/* Add product page */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
+#DVD,
+#Book,
+#Furniture {
+  display: none; 
+}
+/* Validation error styles */
+.form-control.error,
+.form-select.error {
+  border: 3px solid #FF5733;
+}
+
+.error {
+  font-size: .875rem;
+  color: #FF5733;
+}
+
+/* Validation error styles */
+/* .just-validate-error-field,
+.just-validate-error-field:focus {
+    
+} */
+
+
+
+
