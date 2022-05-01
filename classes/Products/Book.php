@@ -30,7 +30,7 @@ class Book extends Product
     public function getProductAttributeHTML()
     {
         $productAttribute = json_decode($this->productAttributes, true);
-        $text = "Weight: " . $productAttribute['weight'] . "KG";
+        $text = "Weight: " . $productAttribute['weight'] . " KG";
         return $text;
     }
 }

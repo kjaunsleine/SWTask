@@ -31,7 +31,7 @@ class Furniture extends Product
     public function getProductAttributeHTML()
     {
         $productAttribute = json_decode($this->productAttributes, true);
-        $text = "Dimensions: " . $productAttribute['height'] . "x" . $productAttribute['width'] . "x" . $productAttribute['length'];
+        $text = "Dimensions: " . $productAttribute['height'] . "x" . $productAttribute['width'] . "x" . $productAttribute['length'] . " CM";
         return $text;
     }
 }

@@ -31,7 +31,7 @@ class DVD extends Product
     public function getProductAttributeHTML()
     {
         $productAttribute = json_decode($this->productAttributes, true);
-        $text = "Size: " . $productAttribute['size'] . "MB";
+        $text = "Size: " . $productAttribute['size'] . " MB";
         return $text;
     }
 }
