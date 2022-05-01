@@ -1,4 +1,5 @@
 <?php
+    require 'includes/addFormFieldsTemplates.inc.php';
     require 'includes/addProduct.inc.php';
 ?>
 <!DOCTYPE html>
@@ -35,90 +36,45 @@
         <form id="product_form" method="POST" action="">
         <!-- Text input -->
         <fieldset class="mb-5">
-            <div class="row">
-            <label class="col-1 col-form-label">SKU</label>
-            <div class="col-3">
-                <input id="sku" class="form-control" type="text" name="sku" value="<?= $validation ? $validation->getValue('sku') : ""; ?>">
-                <label class="error" for="sku"><?= $validation ? $validation->getFirstError('sku') : ""; ?></label>
-            </div>  
+            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <label class="col form-label">SKU</label>
+                <div class="col col-md-6 col-lg-4">
+                    <input id="sku" class="form-control" type="text" name="sku" value="<?= $validation ? $validation->getValue('sku') : ""; ?>">
+                    <label class="error" for="sku"><?= $validation ? $validation->getFirstError('sku') : ""; ?></label>
+                </div>  
             </div>
-            <div class="row">
-            <label class="col-1 col-form-label mt-3">Name</label>
-            <div class="col-3">
-                <input id="name" class="form-control mt-3" type="text" name="name" value="<?= $validation ? $validation->getValue('name') : ""; ?>">
-                <label class="error" for="name"><?= $validation ? $validation->getFirstError('name') : ""; ?></label>
+            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <label class="col form-label mt-3">Name</label>
+                <div class="col col-md-6 col-lg-4">
+                    <input id="name" class="form-control mt-3" type="text" name="name" value="<?= $validation ? $validation->getValue('name') : ""; ?>">
+                    <label class="error" for="name"><?= $validation ? $validation->getFirstError('name') : ""; ?></label>
+                </div>
             </div>
-            </div>
-            <div class="row">
-            <label class="col-1 col-form-label mt-3">Price ($)</label>
-            <div class="col-3">
-                <input id="price" class="form-control mt-3 formAttributes" type="text" name="price" value="<?= $validation ? $validation->getValue('price') : ""; ?>">
-                <label class="error" for="price"><?= $validation ? $validation->getFirstError('price') : ""; ?></label>
-            </div>
+            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <label class="col form-label mt-3">Price ($)</label>
+                <div class="col col-md-6 col-lg-4">
+                    <input id="price" class="form-control mt-3 formAttributes" type="text" name="price" value="<?= $validation ? $validation->getValue('price') : ""; ?>">
+                    <label class="error" for="price"><?= $validation ? $validation->getFirstError('price') : ""; ?></label>
+                </div>
             </div>
         </fieldset>
         <!-- Select type -->
         <fieldset class="mb-5">
-            <div class="row">
-            <label class="col-1 col-form-label">Type Switcher</label>
-            <div class="col-3">
-                <select id="productType" class="form-select" name="productType">
-                <option value="">Change type</option>
-                <option value="DVD">DVD</option>
-                <option value="Furniture">Furniture</option>
-                <option value="Book">Book</option>
-                </select>
-                <label class="error" for="productType"><?= $validation ? $validation->getFirstError('productType') : ""; ?></label>
-            </div>
+            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <label class="col form-label">Type Switcher</label>
+                <div class="col col-md-6 col-lg-4">
+                    <select id="productType" class="form-select" name="productType">
+                        <option value="">Change type</option>
+                        <?= $templateFields->getSelectOptions(); ?>
+                    </select>
+                    <label class="error" for="productType"><?= $validation ? $validation->getFirstError('productType') : ""; ?></label>
+                </div>
             </div>
         </fieldset>
+        
+        </form>   
         <!-- Changing form according to type -->
-        <!-- DVD -->
-        <fieldset id="DVD" class="row">
-            <label class="col-2 col-form-label">Size (MB)</label>
-            <div class="col-3">
-            <input id="size" class="form-control" type="number" name="size" value="<?= $validation ? $validation->getValue('size') : ""; ?>">
-            <label class="error" for="size"><?= $validation ? $validation->getFirstError('size') : ""; ?></label>
-            </div>
-            <div class="form-text">Please provide size in MB</div>
-        </fieldset>
-        <!-- Furniture -->
-        <fieldset id="Furniture" class="row">
-            <div class="col-12">
-            <div class="row">
-                <label class="col-2 col-form-label">Height (CM)</label>
-                <div class="col-3">
-                <input id="height" class="form-control formAttributes" type="number" name="height" value="<?= $validation ? $validation->getValue('height') : ""; ?>">
-                <label class="error" for="height"><?= $validation ? $validation->getFirstError('height') : ""; ?></label>
-                </div>
-            </div>
-            <div class="row">
-                <label class="col-2 col-form-label mt-3">Width (CM)</label>
-                <div class="col-3">
-                <input id="width" class="form-control formAttributes mt-3" type="number" name="width" value="<?= $validation ? $validation->getValue('width') : ""; ?>">
-                <label class="error" for="width"><?= $validation ? $validation->getFirstError('width') : ""; ?></label>
-                </div>
-            </div>
-            <div class="row">
-                <label class="col-2 col-form-label mt-3">Length (CM)</label>
-                <div class="col-3">
-                <input id="length" class="form-control formAttributes mt-3" type="number" name="length" value="<?= $validation ? $validation->getValue('length') : ""; ?>">
-                <label class="error" for="length"><?= $validation ? $validation->getFirstError('length') : ""; ?></label>
-                </div>
-            </div>
-            <div class="form-text">Please provide dimensions in CM</div>
-            </div>
-        </fieldset>
-        <!-- Book -->
-        <fieldset id="Book" class="row">
-            <label class="col-2 col-form-label">Weight (KG)</label>
-            <div class="col-3">
-            <input id="weight" class="form-control formAttributes" type="number" name="weight" value="<?= $validation ? $validation->getValue('weight') : ""; ?>">
-            <label class="error" for="weight"><?= $validation ? $validation->getFirstError('weight') : ""; ?></label>
-            </div>
-            <div class="form-text">Please provide weight in KG</div>
-        </fieldset>
-        </form>
+        <?= $templateFields->getProductAttributeFields(); ?>
     </main>
     <footer class="w-100">
         <p class="footer-text text-uppercase text-center">Scandiweb Test assignment</p>
