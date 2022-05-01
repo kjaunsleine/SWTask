@@ -32,7 +32,6 @@
         <form id="delete_form" action="includes/deleteProduct.inc.php" method="post">
         <div class="product-list mx-auto d-flex flex-wrap">
         <!-- Gets products from database and adds product divs  -->
-        <?php
         /**
          * Displays products depending on type
          * 
@@ -40,21 +39,7 @@
          * using returnProduct() instance of corresponding class is created.
          * Then its corresponding properties and methods can be used to display products.
          */
-            foreach ($productData as $product) {
-                $typeFactory->setProductType($product['type']);
-                $productInstance = $typeFactory->returnProduct();
-                $productInstance->setProductAttributes($product['attributes']);
-        ?>
-            <div class="product">
-                <input class="delete-checkbox" type="checkbox" name="delete[]" value="<?= $product['id']; ?>">
-                <p class="product-sku"><?= $product['sku']; ?></p>
-                <p class="product-name"><?= $product['name']; ?></p>
-                <p class="product-price"><?= $product['price']; ?> $</p>
-                <p class="product-attr"><?= $productInstance->getProductAttributeHTML(); ?></p>
-            </div>
-        <?php  
-            }
-        ?>
+        <?= $productsHTML; ?>
         </div>
         </form>
     </main>
