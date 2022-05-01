@@ -9,9 +9,9 @@ abstract class FormValidation
     // Validation rules as constants
     public const RULE_REQUIRED = 'required';
     public const RULE_SKU = 'sku';
+    public const RULE_SKU_MATCH = 'sku match';
     public const RULE_CHARS_MAX = 'max characters';
     public const RULE_NUMBER = 'number';
-    public const RULE_INT = 'int';
     public const RULE_MIN = 'min';
     public const RULE_MAX = 'max';
     
@@ -34,7 +34,7 @@ abstract class FormValidation
     public function getData($data)
     {
         foreach ($data as $key => $value) {
-            $this->{$key} = htmlspecialchars($value);
+                $this->{$key} = htmlspecialchars($value);
         }
     }
     
@@ -44,7 +44,8 @@ abstract class FormValidation
      * Gets error message from errorMessages array with associated rule if there is one
      * Iterates through params array and replaces placeholders 
      * in message with the value in params array.
-     * Adds error to errors array as attribute => message pair.
+     * Checks if property of corresponding attribute exists and 
+     * adds error to errors array as attribute => message pair.
      * 
      * @param string $attribute
      * @param string $rule
@@ -60,7 +61,9 @@ abstract class FormValidation
             $message = str_replace("{{$key}}", $value, $message);
         }
 
-        $this->errors[$attribute][] = $message;
+        if (property_exists($this, $attribute)) {
+            $this->errors[$attribute][] = $message;
+        }
     }
 
     /**
@@ -73,15 +76,14 @@ abstract class FormValidation
         return [
             self::RULE_REQUIRED => 'This field is required',
             self::RULE_SKU => 'SKU can contain only letters and numbers',
+            self::RULE_SKU_MATCH => 'There is already a product with this SKU.',
             self::RULE_CHARS_MAX => 'Can contain less than {max} characters',
             self::RULE_NUMBER => 'Max 2 digits after decimal point',
-            self::RULE_INT =>'Number has to be a whole number',
             self::RULE_MIN => 'Number can not be smaller than {min}',
             self::RULE_MAX => 'Number can not be larger than {max}'
         ];
     }
 
-    
     /**
      * Returns first error
      * 
@@ -97,7 +99,6 @@ abstract class FormValidation
         return $this->errors[$attribute][0] ?? "";
     }
 
-    
     /**
      * Returns errors array with all error messages to associated attributes
      * 
