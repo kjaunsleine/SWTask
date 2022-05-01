@@ -7,6 +7,10 @@ namespace SWTask\Products;
 abstract class Product
 {
     /**
+     * @var int
+     */
+    protected $id;
+    /**
      * @var string
      */
     protected $name;
@@ -42,7 +46,15 @@ abstract class Product
     abstract public function setProductAttributeJSON($param);
 
     /**
-     * @return string
+     * @return int $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    /**
+     * @return string $name
      */
     public function getName()
     {
@@ -50,7 +62,7 @@ abstract class Product
     }
 
     /**
-     * @return string
+     * @return string $sku
      */
     public function getSku()
     {
@@ -58,10 +70,21 @@ abstract class Product
     }
 
     /**
-     * @return float
+     * @return float $price
      */
     public function getPrice() {
         return $this->price;
+    }
+
+    /**
+     * @param int $id
+     * 
+     * @return object
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
     }
 
     /**
