@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use SWTask\AddProduct\AddProductContr;
 
@@ -15,3 +15,4 @@ use SWTask\AddProduct\AddProductContr;
 
 $newProduct = new AddProductContr();
 $validation = $newProduct->saveProduct();
+echo $validation;
