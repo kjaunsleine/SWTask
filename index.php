@@ -32,6 +32,7 @@
         <form id="delete_form" action="includes/deleteProduct.inc.php" method="post">
         <div class="product-list mx-auto d-flex flex-wrap">
         <!-- Gets products from database and adds product divs  -->
+        <?php 
         /**
          * Displays products depending on type
          * 
@@ -39,7 +40,7 @@
          * using returnProduct() instance of corresponding class is created.
          * Then its corresponding properties and methods can be used to display products.
          */
-        <?= $productsHTML; ?>
+        echo $productsHTML; ?>
         </div>
         </form>
     </main>
