@@ -97,11 +97,6 @@ input[type=number]{
     -moz-appearance: textfield;
 }
 
-#DVD,
-#Book,
-#Furniture {
-    display: none; 
-}
 /* Validation error styles */
 .form-control.error,
 .form-select.error {
