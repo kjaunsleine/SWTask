@@ -73,12 +73,18 @@ class AddProductContr extends AddProduct
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $validation = new ProductFormValidation();
             $validation->getData($_POST);
-
             if ($validation->validate()) {
                 $this->setProductAttributes($validation);
                 $this->addProduct();
+                return json_encode([
+                    'values' => $validation,
+                    'errors' => 0
+                    ]);
             } else {
-                return $validation;
+                return json_encode([
+                    'values' => $validation,
+                    'errors' => $validation->getErrors()
+                    ]);
             }
         }
     }
@@ -91,6 +97,5 @@ class AddProductContr extends AddProduct
     private function addProduct()
     {
         $this->setProduct($this->sku, $this->name, $this->price, $this->productType, $this->productAttribute);
-        header("Location: ../index.php");
     }
 }
