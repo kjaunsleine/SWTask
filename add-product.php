@@ -1,7 +1,3 @@
-<?php
-    require 'includes/addFormFieldsTemplates.inc.php';
-    require 'includes/addProduct.inc.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,9 +15,9 @@
         <!-- jQuery validation -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" defer></script>
         <!-- JS and CSS? -->
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
         <script type="text/javascript" src="./js/app.js" defer></script>
-        <script type="text/javascript" src="./js/form.js" defer></script>
+        <script type="module" src="./js/form.js"></script>
         <title>Add product</title>
     </head>
     <body>
@@ -34,47 +30,47 @@
         </header>
     <main>
         <form id="product_form" method="POST" action="">
-        <!-- Text input -->
-        <fieldset class="mb-5">
-            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
-                <label class="col form-label">SKU</label>
-                <div class="col col-md-6 col-lg-4">
-                    <input id="sku" class="form-control" type="text" name="sku" value="<?= $validation ? $validation->getValue('sku') : ""; ?>">
-                    <label class="error" for="sku"><?= $validation ? $validation->getFirstError('sku') : ""; ?></label>
-                </div>  
-            </div>
-            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
-                <label class="col form-label mt-3">Name</label>
-                <div class="col col-md-6 col-lg-4">
-                    <input id="name" class="form-control mt-3" type="text" name="name" value="<?= $validation ? $validation->getValue('name') : ""; ?>">
-                    <label class="error" for="name"><?= $validation ? $validation->getFirstError('name') : ""; ?></label>
+            <!-- Text input -->
+            <fieldset class="mb-5">
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                    <label class="col form-label">SKU</label>
+                    <div class="col col-md-6 col-lg-4">
+                        <input id="sku" class="form-control" type="text" name="sku">
+                        <label id="sku-error" class="error" for="sku"></label>
+                    </div>  
                 </div>
-            </div>
-            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
-                <label class="col form-label mt-3">Price ($)</label>
-                <div class="col col-md-6 col-lg-4">
-                    <input id="price" class="form-control mt-3 formAttributes" type="text" name="price" value="<?= $validation ? $validation->getValue('price') : ""; ?>">
-                    <label class="error" for="price"><?= $validation ? $validation->getFirstError('price') : ""; ?></label>
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                    <label class="col form-label mt-3">Name</label>
+                    <div class="col col-md-6 col-lg-4">
+                        <input id="name" class="form-control mt-3" type="text" name="name">
+                        <label id="name-error" class="error" for="name"></label>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-        <!-- Select type -->
-        <fieldset class="mb-5">
-            <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
-                <label class="col form-label">Type Switcher</label>
-                <div class="col col-md-6 col-lg-4">
-                    <select id="productType" class="form-select" name="productType">
-                        <option value="">Change type</option>
-                        <?= $templateFields->getSelectOptions(); ?>
-                    </select>
-                    <label class="error" for="productType"><?= $validation ? $validation->getFirstError('productType') : ""; ?></label>
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                    <label class="col form-label mt-3">Price ($)</label>
+                    <div class="col col-md-6 col-lg-4">
+                        <input id="price" class="form-control mt-3 formAttributes" type="text" name="price">
+                        <label id="price-error" class="error" for="price"></label>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-        
-        </form>   
-        <!-- Changing form according to type -->
-        <?= $templateFields->getProductAttributeFields(); ?>
+            </fieldset>
+            <!-- Select type -->
+            <fieldset class="mb-5">
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                    <label class="col form-label">Type Switcher</label>
+                    <div class="col col-md-6 col-lg-4">
+                        <select id="productType" class="form-select" name="productType">
+                            <option value="">Change type</option>
+                            <option value="DVD">DVD</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Book">Book</option>
+                        </select>
+                        <label id="productType-error" class="error" for="productType"></label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="productFields"></fieldset>
+        </form>
     </main>
     <footer class="w-100">
         <p class="footer-text text-uppercase text-center">Scandiweb Test assignment</p>
