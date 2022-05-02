@@ -99,7 +99,7 @@ class GetProductsContr extends GetProducts
                             <input class="delete-checkbox" type="checkbox" name="delete[]" value="%d">
                             <p class="product-sku">%s</p>
                             <p class="product-name">%s</p>
-                            <p class="product-price">%f $</p>
+                            <p class="product-price">%01.2f $</p>
                             <p class="product-attr">%s</p>
                         </div>', 
                         $productObject->getId(), 
