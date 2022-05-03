@@ -31,7 +31,7 @@
     <main>
         <form id="product_form" method="POST" action="">
             <!-- Text input -->
-            <fieldset class="mb-5">
+            <fieldset class="container mb-5">
                 <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
                     <label class="col form-label">SKU</label>
                     <div class="col col-md-6 col-lg-4">
@@ -55,7 +55,7 @@
                 </div>
             </fieldset>
             <!-- Select type -->
-            <fieldset class="mb-5">
+            <fieldset class="container mb-5">
                 <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
                     <label class="col form-label">Type Switcher</label>
                     <div class="col col-md-6 col-lg-4">
