@@ -8,8 +8,8 @@ export default class Fields {
         html += '<label class="col form-label" for="weight">Weight (KG)</label>';
         html += '<div class="col col-md-6 col-lg-4">';
         html += '<input id="weight" class="form-control formValue formAttributes" type="number" step="any" name="weight">';
-        html += '<label class="form-text mb-3">Please provide weight in KG</label>';
         html += '<label id="weight-error" class="error" for="weight"></label>';
+        html += '<label class="form-text mb-3">Please provide weight in KG</label>';
         html += '</div></fieldset></div>'
         return html;
     }
@@ -19,8 +19,8 @@ export default class Fields {
         html += '<label class="col-2 col-form-label" for="size">Size (MB)</label>';
         html += '<div class="col col-md-6 col-lg-4">';
         html += '<input id="size" class="form-control formValue formAttributes" type="number" step="any" name="size">';
-        html += '<label class="form-text mb-3">Please provide size in MB</label>';
         html += '<label id="size-error" class="error" for="size"></label>';
+        html += '<label class="form-text mb-3">Please provide size in MB</label>';
         html += '</div></fieldset></div>';
         return html;
     }
