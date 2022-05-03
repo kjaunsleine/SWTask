@@ -67,8 +67,12 @@ header {
 }
 
 @media only screen and (max-width: 739px) {
+    .product {
+        width: 100%;
+    }
+    
     .product-list {
-        max-width: 334px;
+        max-width: 500px;
     }
 }
 
