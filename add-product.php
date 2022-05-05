@@ -32,21 +32,21 @@
         <form id="product_form" method="POST" action="">
             <!-- Text input -->
             <fieldset class="container mb-5">
-                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row align-items-center">
                     <label class="col form-label">SKU</label>
                     <div class="col col-md-6 col-lg-4">
                         <input id="sku" class="form-control" type="text" name="sku">
                         <label id="sku-error" class="error" for="sku"></label>
                     </div>  
                 </div>
-                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row align-items-center">
                     <label class="col form-label mt-3">Name</label>
                     <div class="col col-md-6 col-lg-4">
                         <input id="name" class="form-control mt-3" type="text" name="name">
                         <label id="name-error" class="error" for="name"></label>
                     </div>
                 </div>
-                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row align-items-center">
                     <label class="col form-label mt-3">Price ($)</label>
                     <div class="col col-md-6 col-lg-4">
                         <input id="price" class="form-control mt-3 formAttributes" type="text" name="price">
@@ -56,7 +56,7 @@
             </fieldset>
             <!-- Select type -->
             <fieldset class="container mb-5">
-                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row">
+                <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row align-items-center">
                     <label class="col form-label">Type Switcher</label>
                     <div class="col col-md-6 col-lg-4">
                         <select id="productType" class="form-select" name="productType">
