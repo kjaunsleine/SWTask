@@ -24,8 +24,8 @@
     <header class="w-100 d-flex justify-content-between align-items-center flex-column flex-sm-row">
         <h1 class="header-headline mb-2 mb-sm-0 ">Product List</h1>
         <div class="header-btn-container">
-            <a id="add-product-btn" class="header-btn btn btn-outline-dark text-uppercase me-3" href="./add-product.php">Add</a>
-            <input id="delete-products-btn" class="header-delete-btn btn btn-outline-dark text-uppercase me-3" type="submit" name="mass_delete" value="Mass delete" form="delete_form">
+            <a id="add-product-btn" class="header-btn btn btn-outline-dark me-3" href="./add-product.php">ADD</a>
+            <button id="delete-products-btn" class="header-delete-btn btn btn-outline-dark me-3" type="submit" name="mass_delete" form="delete_form">MASS DELETE</button>
         </div>
     </header>
     <main class="w-100">
