@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SWTask\\' => array($baseDir . '/classes'),
+    'App\\' => array($baseDir . '/app'),
 );

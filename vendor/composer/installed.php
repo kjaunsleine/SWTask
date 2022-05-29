@@ -6,11 +6,11 @@
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'reference' => NULL,
-        'name' => 'user/sw-task',
+        'name' => 'user/website',
         'dev' => true,
     ),
     'versions' => array(
-        'user/sw-task' => array(
+        'user/website' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'type' => 'library',

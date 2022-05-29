@@ -1,19 +1,15 @@
 {
-    "name": "user/sw-task",
+    "name": "user/website",
     "autoload": {
         "psr-4": {
-            "SWTask\\": "classes/"
+            "App\\": "app/"
         }
     },
     "authors": [
         {
             "name": "Krista Jaunsleine",
-            "email": "krista.jaunsleine@gmail.com"
+            "email": "krista.jaunsleine@inbox.lv"
         }
     ],
-    "config": {
-        "allow-plugins": {
-            "symfony/flex": true
-        }
-    }
+    "require": {}
 }
