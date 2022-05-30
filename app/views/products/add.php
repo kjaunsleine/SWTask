@@ -27,7 +27,7 @@
                 <div class="row row-cols-12 row-cols-md-6 flex-column flex-sm-row align-items-center">
                     <label class="col form-label mt-3">Price ($)</label>
                     <div class="col col-md-6 col-lg-4">
-                        <input id="price" class="form-control mt-4 formAttributes <?= (!empty($data['errors']['priceError'])) ? 'error' : ''; ?>" type="text" name="price" value="<?= $data['inputData']['price'] ?? ''; ?>">
+                        <input id="price" class="form-control mt-4 formAttributes <?= (!empty($data['errors']['priceError'])) ? 'error' : ''; ?>" type="number" name="price" value="<?= $data['inputData']['price'] ?? ''; ?>">
                         <label id="price-error" class="error" for="price"><?= $data['errors']['priceError'] ?? ''; ?></label>
                     </div>
                 </div>
