@@ -2,14 +2,14 @@ $(function(){
 
     'use strict';
 
-    const url = 'http://localhost:8000/add/fields';
+    const url = 'http://localhost:8000';
+    const addFieldsUrl = url + '/add/fields';
 
     $('#productType').on('change', function(){
         const dataString = $(this).serialize();
-        console.log(dataString);
         $.ajax({
             type: 'POST',
-            url: url,
+            url: addFieldsUrl,
             data: dataString,
             success: function(data){
                     $('#productFields').html(data);
