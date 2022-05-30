@@ -13,7 +13,7 @@ class Core
     protected Request $request;
 
     public function __construct() {
-        $this->request = new Request;
+        $this->request = new Request();
         $this->router = new Router($this->request);
     }
 }
