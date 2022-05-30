@@ -2,7 +2,6 @@
 
 namespace App\Core;
 
-
 class Database
 {
     private $host = DB_HOST;
