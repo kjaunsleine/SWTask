@@ -4,14 +4,14 @@ require_once '../app/bootstrap.php';
 use App\Controllers\Products;
 use App\Core\Core;
 
-$app = new App\Core\Core;
+$app = new App\Core\Core();
 
 $app->router->get('/', function() {
     $pages = new App\Controllers\Products();
     return $pages->indexPage();
 });
 
-$app->router->get('/add', function($request) {
+$app->router->get('/add', function() {
     $pages = new App\Controllers\Products();
     return $pages->addProductPage();
 });
